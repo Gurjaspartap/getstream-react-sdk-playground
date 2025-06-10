@@ -1,54 +1,80 @@
-# React + TypeScript + Vite
+# Video Call Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time video calling application built with React and Stream Video SDK. This project demonstrates the implementation of video calling features using Stream's powerful SDK.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Real-time video calling
+- Multiple participant support
+- Speaker layout for video display
+- Call controls (mute, camera toggle, etc.)
+- Modern UI with Stream's default theme
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (v14 or higher)
+- npm or yarn
+- A Stream account and API credentials
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Setup
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd video-call
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
 ```
+
+3. Configure your Stream credentials:
+   - Get your API key from [Stream Dashboard](https://dashboard.getstream.io)
+   - Update the `apiKey` and `token` in `src/App.tsx`
+
+4. Start the development server:
+```bash
+npm start
+# or
+yarn start
+```
+
+## Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+```
+REACT_APP_STREAM_API_KEY=your_api_key
+REACT_APP_STREAM_TOKEN=your_token
+```
+
+## Technologies Used
+
+- React
+- TypeScript
+- Stream Video SDK
+- CSS Modules
+
+## Project Structure
+
+```
+src/
+  ├── App.tsx          # Main application component
+  ├── index.tsx        # Application entry point
+  └── index.css        # Global styles
+```
+
+## Contributing
+
+Feel free to submit issues and enhancement requests!
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [Stream Video SDK](https://getstream.io/video/docs/react/introduction/)
+- [React Documentation](https://reactjs.org/)
